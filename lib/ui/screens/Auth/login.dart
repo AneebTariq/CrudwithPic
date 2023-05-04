@@ -1,4 +1,5 @@
 import 'package:crud_operation/ui/screens/Auth/register.dart';
+import 'package:crud_operation/ui/screens/add_data_screen.dart';
 import 'package:crud_operation/ui/screens/read_data_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +53,7 @@ class _UserloginState extends State<Userlogin> {
                   password: passwordcontroller.text,
                 );
 
-                Get.offAll(() => const Readscreen());
+                Get.offAll(() => AddData());
               } on FirebaseAuthException catch (e) {
                 if (e.code == 'user-not-found') {
                   Get.snackbar('Wrong', ' Please Enter Correct Email/Password ',
